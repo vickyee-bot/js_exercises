@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>area of a triangle</title>
+</head>
+<body>
+  <input type="number" class="side1">
+  <input type="number" class="side2">
+  <input type="number" class="side3">
+  <button onclick="findArea ()">Calculate</button>
+  <p class="result"></p>
+  <script>
+    function findArea () {
+      const side1 = Number(document.querySelector('.side1').value);
+      const side2 = Number(document.querySelector('.side2').value);
+      const side3 = Number(document.querySelector('.side3').value);
+
+      if (isNaN(side1) || isNaN(side2) || isNaN(side3)){
+      document.querySelector('.result').innerHTML = 'Please input valid numbers';
+      return;
+    }
+    const s = (side1 + side2 + side3)/2;
+
+    const area = Math.sqrt(s * (s - side1) * (s - side2) * (s - side3));
+
+    document.querySelector('.result').innerHTML = `Your area is: ${area}`;
+    }
+
+    
+  </script>
+</body>
+</html>
