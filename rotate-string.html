@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rotate string left/right</title>
+</head>
+<body>
+  <input type="text" class="string" placeholder="Enter string">
+  <button class="left">Rotate left</button>
+  <button class="right">Rotate right</button>
+  <p class="rotate"></p>
+
+  <script> 
+    function rotateLeft(string) {
+
+      // Check if the string is empty or has only one letter (no change needed)
+      if(string.length <= 1) {
+        return string;
+      }
+
+      // Get the first letter
+      const firstChar = string.charAt(0);
+      // Get the rest of the string except the first letter
+      const restOfString = string.slice(1);
+      // Combine the rest of the string with the first letter at the end
+      return restOfString + firstChar;
+    }
+
+    function rotateRight (string) {
+      if(string.length <= 1) {
+        return string;
+      }
+
+      const lastChar = string.charAt(string.length - 1);
+      const restOfString = string.slice(0, string.length - 1);
+      return lastChar + restOfString;
+    }
+
+      document.querySelector('.left').addEventListener('click', () => {
+        const string = document.querySelector('.string').value;
+        const rotatedString = rotateLeft(string);
+        document.querySelector('.rotate').innerHTML = `Rotated left: ${rotatedString}`;
+      });
+
+      document.querySelector('.right').addEventListener('click', () => {
+        const string = document.querySelector('.string').value;
+        const rotatedString = rotateRight(string);
+        document.querySelector('.rotate').innerHTML = `Rotated right: ${rotatedString}`;
+      });
+    
+    
+  </script>
+</body>
+</html>
