@@ -4,12 +4,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dom projects</title>
+  <style>
+    .subscribe-button {
+      border: none;
+      background-color: black;
+      color: white;
+      border-radius: 20px;
+      padding: 10px;
+      font-weight: bold;
+    }
+  </style>
 </head>
 <body>
   <p>YouTube Subscribe Button</p>
   <button onclick="
    subscribe();
-  " class="js-subscribe">Subscribe</button>
+  " class="js-subscribe subscribe-button">Subscribe</button>
   <script>
     function subscribe() {
       const buttonElement = document.querySelector('.js-subscribe');
